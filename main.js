@@ -1,14 +1,19 @@
-let image = document.querySelector('img');
-let clicks = 0;
+const canvas = document.querySelector('canvas');
+const c = canvas.getContext('2d');
+canvas.width = 1024;
+canvas.height = 576;
 
-function stop()
-{
-    image.src = "turbine/turbine1.png";
-}
-function turn()
-{
-    image.src = "turbine/turbine.gif";
-}
+c.fillStyle = 'cornflowerblue';
+c.fillRect(0,0,canvas.width, canvas.height);
+
+const image = new Image();
+image.src = "turbine/backgroundA.png";
+
+let clicks = 0;
+let numHouse = 1;
+
+c.drawImage(image, 0,0);
+
 function increment()
 {
    clicks++;
@@ -25,10 +30,10 @@ function increment()
        panel.textContent = "Solar Panel Unlocked!"
    }
 
-   if (clicks >= 15)
+   if (clicks >= 13 && clicks % 13 == 0)//supposed to be >= 10,715
    {
        let house = document.querySelector('house');
-       house.textContent = "You can now power 1 american home for [insert hours here] hours !"
+       house.textContent = "You can now power 1 American home for " + clicks / 13 + " hours!"
    }
 
    document.querySelector('span').textContent = clicks;

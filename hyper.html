@@ -1,40 +1,44 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <h1>
-            Turbine Clicker
-        </h1>
-        <p>
-            Click the Turbine
-        </p>
-        <div id="aninmation">[TO PLAY ANIMATION AS QUICK AS PRESSED]</div>
-        <img 
-            src = "turbine/turbine1.png"
-            onmouseover="turn()"
-            onmouseout="stop()"
-            onclick="increment()"
-        >
+<style>
+    body
+    {
+        background-color: black;
+    }
+</style>
+<canvas>
+    <h1>
+        Turbine Clicker ver. 0.1
+    </h1>
+    <p>
+        Click the Turbine
+    </p>
+    <div id="aninmation">[TO PLAY ANIMATION AS QUICK AS PRESSED]</div>
+    <img 
+        src = "turbine/turbine1.png"
+        onmouseover="turn()"
+        onmouseout="stop()"
+        onclick="increment()"
+    >
+    
+    <p>
+        Energy produced: 
+        <span>
+            0
+        </span>
+            kwh
+    </p>
+    <p>
+        <wind> 
+        </wind>
         
-        <p>
-           Energy produced: 
-            <span>
-                0
-            </span>
-             kwh
-        </p>
-        <p>
-            <wind> 
-            </wind>
-            
-            <panel>
-            </panel>
-        
-            <house></house>
-        </p>
-        
-        
-        <script src = "main.js"></script>
-    </body>
-</html>
+        <panel>
+        </panel>
+    
+        <house></house>
+    </p>
+</canvas>
+
+
+
+<script src = "main.js"></script>
 
 
