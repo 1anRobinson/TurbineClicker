@@ -9,50 +9,53 @@ c.fillRect(0,0,canvas.width, canvas.height)
 const backgroundImage = new Image()
 backgroundImage.src = "turbine/backgroundA.png"
 
-const turbine = new Image()
-turbine.src = "turbine/SpriteSheet.png"
+const pole = new Image()
+pole.src = "turbine/pole.png"
 
-class Sprite
-{
-    constructor({image, position, speed})
-    {
-        this.position = position
-        this.image = image
-    }
+const blades = new Image()
+blades.src = "turbine/SpriteSheet.png"
 
-    draw()
-    {
-        c.drawImage(this.image, 0,0)
-    }
-}
 const backgroundA = new Sprite
 ({
     image: backgroundImage,
-
     position: 
     {
         x: 0, 
         y: 0
     },
+    frames: {max: 1},
+})
 
+const turbineA = new Sprite
+({
+    image: blades,
+    position:
+    {
+        x: 246,
+        y: 368
+    },
+    frames: {max:8},
+})
+
+const turbinePole = new Sprite
+({
+    image: pole,
+    position:
+    {
+        x: 310,
+        y: 437
+    },
+    frames:{max:1},
+    layers:{max:1}
 })
 
 function animate()
 {
     window.requestAnimationFrame(animate)
     backgroundA.draw()
-    c.drawImage
-    (
-        turbine, 
-        0,
-        0,
-        turbine.width / 4,
-        turbine.height / 2,
-        canvas.width / 2 - turbine.width / 2 -63,      // specific
-        canvas.height / 2 - (turbine.height / 2) +247, // turbine placement
-        turbine.width / 4,
-        turbine.height / 2,
-    )
+    turbinePole.draw()
+    turbineA.draw()
+    
 }
 animate()
 
