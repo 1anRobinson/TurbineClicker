@@ -23,7 +23,7 @@ const backgroundA = new Sprite
         x: 0, 
         y: 0
     },
-    frames: {max: 1},
+    frames: {max: 1}
 })
 
 const turbineA = new Sprite
@@ -64,7 +64,7 @@ window.addEventListener('click', (e) =>
     if(e.offsetX >= 264 && e.offsetX <= 361 && 
         e.offsetY >= 400 && e.offsetY <= 528) //bounds for clicking the turbine
     {
-        console.log(e)
+       increment();
     }
     
 })

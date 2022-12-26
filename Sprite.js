@@ -33,7 +33,7 @@ class Sprite
             this.frames.delay++
         }
 
-        if(this.frames.delay %45==0)
+        if(this.frames.delay %2==0)
         {
             if(this.frames.val < this.frames.max - 1)
             {
